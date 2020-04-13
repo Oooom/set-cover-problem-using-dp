@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Solving set-cover problem using Dynamic Programming</title>
+        <style>
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+            #pane{
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 15%;
+                background-color: white;
+                box-shadow: 5px 0px 20px black;
+            }
+            #status_container{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 4px;
+                background-color: rgba(100, 100, 100, 0.5);
+                color: white;
+            }
+        </style>
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
+    </head>
+    <body>
+        <div id = "pane">
+            <br>
+            <pre>
+    a - add target
+    s - remove target
+    z - add sensor
+    x - remove sensor
+    space - toggle pane
+            </pre>
+        </div>
+        <div id="status_container">
+            <span id = "status_text"></span>
+        </div>
+        <script src='p5.min.js'></script>
+        <script src='sketch.js'></script>
+        <script>
+            hideStatus()
+
+            function showStatus(msg){
+                status_text.innerText = msg
+                status_container.style.opacity = 1
+            }
+            function hideStatus(){
+                status_container.style.opacity = 0
+            }
+
+            var isPaneVisible = true
+            function togglePane(){
+                pane.style.display = (isPaneVisible) ? 'none' : 'block'
+                isPaneVisible = !isPaneVisible
+            }
+        </script>
+    </body>
+</html>
