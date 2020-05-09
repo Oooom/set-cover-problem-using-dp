@@ -140,11 +140,14 @@ function addTargetHandler(){
 
 function removeTargetHandler(){
     var promise = new Promise(function(resolve, reject){
-        id = parseInt(prompt('ID of Target to be removed'))
-    
-        removeTarget(id)
-
-        resolve()
+        var result = prompt('ID of Target to be removed')
+        if(result){
+            id = parseInt(result)
+            
+            removeTarget(id)
+            
+            resolve()
+        }
     })
 
     return promise
@@ -195,11 +198,14 @@ function addSensorHandler(){
 
 function removeSensorHandler(){
     var promise = new Promise(function(resolve, reject){
-        id = parseInt(prompt('ID of Sensor to be removed'))
+        var result = prompt('ID of Sensor to be removed')
+        if(result){
+            id = parseInt(result)
+        
+            removeSensor(id)
     
-        removeSensor(id)
-
-        resolve()
+            resolve()
+        }
     })
 
     return promise
@@ -313,10 +319,9 @@ function calculate(){
         for(var target of targetCopy){
             target.sensed = false
 
-            var i = 0
-            while(target.sensedBy.indexOf(set[i]) != -1){
-                target.sensedBy.splice(target.sensedBy.indexOf(set[i]), 1)
-                i++
+            for(i=0; i<set.length; i++){
+                if(target.sensedBy.indexOf(set[i]) != -1)
+                    target.sensedBy.splice(target.sensedBy.indexOf(set[i]), 1)
             }
         }
     }
