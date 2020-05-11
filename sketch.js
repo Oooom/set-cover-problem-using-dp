@@ -298,6 +298,7 @@ function calculate(){
         }
     }
 
+    displayStats(sets.length)
     return sets
 
     function getTargetCountUniquelySensedBy(sid){
@@ -353,6 +354,10 @@ function calculate(){
         }
 
         return (covered_count == targetCopy.length) ? set : null
+    }
+    function displayStats(sets){
+        document.getElementById("stats").style.display = "block";
+        document.getElementById("optimized").innerText = sets*1000+" secs";
     }
 }
 

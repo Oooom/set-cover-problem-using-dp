@@ -22,6 +22,17 @@
                 background-color: rgba(100, 100, 100, 0.5);
                 color: white;
             }
+            .unit{
+                font-weight: bold;
+            }
+            .stats{
+                margin: 2vh 3px;
+                display: none;
+                text-align: center;
+                border: 1px solid;
+                border-radius: 20px;
+                background-color: papayawhip;
+            }
         </style>
         <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
     </head>
@@ -35,7 +46,15 @@
     x - remove sensor
     space - toggle pane
             </pre>
-            <button onclick="colorSets(calculate())">calculate</button>
+            <button onclick="colorSets(calculate())" style="margin-left:2vw;">calculate</button>
+            <div id="stats" class="stats"><br>
+                Sensor battery consumed in normal mode: <div class="unit">1 unit/sec</div> <br>
+                Sensor battery consumed in sleep mode: <div class="unit">0 unit/sec</div> <br>
+                Total units of battery: <div class="unit">1000 units</div> <br><br>
+
+                Time the sensors work without using set cover algorithm : <div class="unit" id="unoptimized">1000 secs</div><br>
+                Time the sensors work with set cover algorithm : <div class="unit" id="optimized"></div><br>
+            </div>
         </div>
         <div id="status_container">
             <span id = "status_text"></span>
