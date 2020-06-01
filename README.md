@@ -1,8 +1,8 @@
-# set-cover-problem-using-dp
+# solving-set-cover-problem
 
-We have solved the set cover problem using Dynamic Programming approach.
+We have solved the set cover problem using Greedy approach.
 
 Collaborators on this repo:
 @SwathyD
-@UtkarshJain
+@jainut20
 @Oooom
